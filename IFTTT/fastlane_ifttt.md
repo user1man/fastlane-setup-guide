@@ -41,7 +41,7 @@ platform :ios do
   IFTTT_ACTIONS = ['fastlane_push', 'название команд из WebHooks']
   IFTTT_ADMIN_TOKENS = ['токены админов']
   IFTTT_ADMIN_ACTIONS = ['fastlane_telegram', 'название команд из WebHooks']
-  ITMS-SERVICES = "itms-services://?action=download-manifest&url="
+  ITMS_SERVICES = "itms-services://?action=download-manifest&url="
   QR_GEN_URL = "https://linkbridge.ru/item-serviece.php?url="
   before_all do
     xcodeproj = "файл.xcodeproj"
@@ -62,9 +62,9 @@ platform :ios do
 				ifttt(
 					api_key: account_token,
 					event_name: event_name,
-					value1: "#{ITMS-SERVICES}#{plist_url}",
+					value1: "#{ITMS_SERVICES}#{plist_url}",
 					value2: "#{QR_GEN_URL}#{plist_url}",
-					value3: "full_build_number"
+					value3: full_build_number
 				)
 			end
 		end
@@ -73,9 +73,9 @@ platform :ios do
 				ifttt(
 					api_key: account_token,
 					event_name: event_name,
-					value1: "#{ITMS-SERVICES}#{plist_url}",
+					value1: "#{ITMS_SERVICES}#{plist_url}",
 					value2: "#{QR_GEN_URL}#{plist_url}",
-					value3: "full_build_number"
+					value3: full_build_number
 				)
 			end
 		end
